@@ -74,7 +74,6 @@ const MainGamePage = () => {
     <PageContainer>
       {currentQuestion ? (
         <QuestionContainer
-          key={currentQuestion.character.id}
           currentQuestion={currentQuestion}
           answer={answer}
           onAnswer={attemptAnswer}

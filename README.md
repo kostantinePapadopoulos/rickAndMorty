@@ -1,23 +1,3 @@
-<!-- # Rick and Morty quiz app
-
-<ins> </ins>
-
-A simple React app that tests users on their knowledge of Rick
-and Morty characters.
-
--Used Context provider for better scalability instead of state management on the game
--created customHook for game management (loading charactes, restart game, etc) attached to the context
-
-# To install
-
-Just run:
-_npm install_
-
-# Libraries Used
-
-react-router-dom
-tailwindcss -->
-
 # Rick and Morty Quiz App
 
 _Wubba Lubba Dub-Dub!_ Test your knowledge of the multiverse's most chaotic duo with this interactive character quiz!
@@ -42,7 +22,7 @@ and Morty characters.
 - **Custom Hooks**: Reusable game logic (`useGameInitialization`)
 - **TypeScript**: Full type safety throughout the application
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -73,7 +53,7 @@ and Morty characters.
 4. **Open your browser**
    Navigate to `http://localhost:5173`
 
-## 🎯 How to Play
+## How to Play
 
 1. **Start a New Game**: Click "Start a new game!" on the home screen
 2. **Answer Questions**: Look at the character image and select the correct name

@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-portalsColor: #4fed16;
+  --color-mortysShirt: #efed3e;
+  --color-ricksHair: #b2daee;
+}

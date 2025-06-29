@@ -1,7 +1,6 @@
 import { createContext, useState, type ReactNode } from "react";
-//types
-import type { QuestionType } from "../../types/QuestionType";
 import type { GameContextType } from "../../types/GameContextType";
+import type { QuestionType } from "../../types/QuestionType";
 
 export const GameContext = createContext<GameContextType | null>(null);
 

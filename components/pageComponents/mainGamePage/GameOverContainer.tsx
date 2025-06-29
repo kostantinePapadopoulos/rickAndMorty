@@ -7,7 +7,7 @@ import { useGameInitialization } from "../../../utils/useGameInitialization";
 
 const GameOverContainer = () => {
   const navigate = useNavigate();
-  const { gameQuestionsContext } = useContext(GameContext);
+  const { gameQuestionsContext } = useContext(GameContext)!;
   const [gameQuestions] = gameQuestionsContext;
   const { startNewGame } = useGameInitialization();
 

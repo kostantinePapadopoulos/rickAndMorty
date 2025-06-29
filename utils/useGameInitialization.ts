@@ -10,7 +10,7 @@ import type { QuestionType } from "../types/QuestionType";
 export const useGameInitialization = () => {
   const navigate = useNavigate();
 
-  const { gameQuestionsContext } = useContext(GameContext);
+  const { gameQuestionsContext } = useContext(GameContext)!;
   const [gameQuestions, setGameQuestions] = gameQuestionsContext;
 
   const {

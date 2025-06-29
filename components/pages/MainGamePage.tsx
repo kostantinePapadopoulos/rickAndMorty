@@ -14,7 +14,7 @@ const MainGamePage = () => {
   const navigate = useNavigate();
   const [answer, setAnswer] = useState<boolean | null>(null);
   const { hasGameInProgress } = useGameInitialization();
-  const { gameQuestionsContext } = useContext(GameContext);
+  const { gameQuestionsContext } = useContext(GameContext)!;
 
   const [gameQuestions, setGameQuestions] = gameQuestionsContext;
 
@@ -41,6 +41,7 @@ const MainGamePage = () => {
         const currentQuestion = gameQuestions.find(
           (que: QuestionType) => que.answer === null
         );
+        if (!currentQuestion) return prev;
         const newAnswers = prev.map((question) => {
           if (question.character.id === currentQuestion.character.id) {
             return {
@@ -73,7 +74,7 @@ const MainGamePage = () => {
     <PageContainer>
       {currentQuestion ? (
         <QuestionContainer
-          key={currentQuestion.id}
+          key={currentQuestion.character.id}
           currentQuestion={currentQuestion}
           answer={answer}
           onAnswer={attemptAnswer}

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import type { CharacterType } from "../../../types/CharacterType";
 import type { QuestionType } from "../../../types/QuestionType";
+import type { GameContextType } from "../../../types/GameContextType";
 
 import { GameContext } from "../../contextProviders/GameContext";
 import MainAnswerButton from "../../buttons/MainAnswerButton";
@@ -12,9 +13,15 @@ const QuestionContainer = ({
 }: {
   answer: boolean | null;
   currentQuestion: QuestionType;
-  onAnswer: any;
+  onAnswer: (currentQuestion: QuestionType, answer: CharacterType) => void;
 }) => {
-  const { gameQuestionsContext } = useContext(GameContext);
+  const context = useContext<GameContextType | null>(GameContext);
+  if (!context) {
+    console.error("GameContext is null. Make sure you're inside a provider.");
+    return;
+  }
+  const { gameQuestionsContext } = context;
+
   const [gameQuestions] = gameQuestionsContext;
 
   const totalQuestions = gameQuestions.length;

@@ -79,7 +79,7 @@ and Morty characters.
 2. **Answer Questions**: Look at the character image and select the correct name
 3. **Track Progress**: Watch your score and progress through the visual indicators
 4. **Complete the Quiz**: Finish all 5 questions to see your final score
-5. **Play Again**: Start a new game or continue from where you left off
+5. **Start Over**: Start a new game or continue from where you left off
 
 ## Acknowledgments
 

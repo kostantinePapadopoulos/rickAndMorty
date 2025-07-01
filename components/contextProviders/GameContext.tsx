@@ -6,9 +6,11 @@ export const GameContext = createContext<GameContextType | null>(null);
 
 export const GameProvider = ({ children }: { children: ReactNode }) => {
   const [gameQuestions, setGameQuestions] = useState<QuestionType[]>([]);
+  const [isDark, setIsDark] = useState(false);
 
   const contextValue: GameContextType = {
     gameQuestionsContext: [gameQuestions, setGameQuestions],
+    themeContext: [isDark, setIsDark],
     hasGameInProgress: gameQuestions.some((q) => q.answer === null),
   };
 

@@ -6,5 +6,6 @@ export interface GameContextType {
     QuestionType[],
     Dispatch<SetStateAction<QuestionType[]>>
   ];
+  themeContext: [boolean, Dispatch<SetStateAction<boolean>>];
   hasGameInProgress: boolean;
 }

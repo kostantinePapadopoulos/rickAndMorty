@@ -7,8 +7,11 @@ import { useGameInitialization } from "../../../utils/useGameInitialization";
 
 const GameOverContainer = () => {
   const navigate = useNavigate();
-  const { gameQuestionsContext } = useContext(GameContext)!;
+  const { gameQuestionsContext, themeContext } = useContext(GameContext)!;
+
+  const [isDark] = themeContext;
   const [gameQuestions] = gameQuestionsContext;
+
   const { startNewGame } = useGameInitialization();
 
   const totalQuestions = gameQuestions.length;
@@ -18,7 +21,11 @@ const GameOverContainer = () => {
   ).length;
 
   return (
-    <div className="flex flex-col items-center gap-4 p-6 bg-white rounded-lg shadow-lg">
+    <div
+      className={`${
+        isDark ? "bg-gray-600 text-white" : "bg-white text-black"
+      } flex flex-col items-center gap-4 p-6 rounded-lg shadow-lg`}
+    >
       <div className="text-6xl font-bold bg-linear-to-r from-portalsColor to-ricksHair bg-clip-text text-transparent py-4">
         Game Complete!
       </div>

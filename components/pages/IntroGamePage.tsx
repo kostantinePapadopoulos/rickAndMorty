@@ -34,7 +34,7 @@ const IntroGamePage = () => {
         </div>
       </div>
 
-      <p className="text-center max-w-100 text-gray-700">
+      <p className="text-center max-w-100">
         Wubba Lubba Dub-Dub! Join Rick and Morty on a chaotic ride through
         infinite realities—solve bizarre puzzles, battle mutant clones, and
         outwit galactic overlords before the universe collapses in on itself…

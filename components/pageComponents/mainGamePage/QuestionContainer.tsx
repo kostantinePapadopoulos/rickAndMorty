@@ -14,9 +14,10 @@ const QuestionContainer = ({
   currentQuestion: QuestionType;
   onAnswer: (currentQuestion: QuestionType, answer: CharacterType) => void;
 }) => {
-  const { gameQuestionsContext } = useContext(GameContext)!;
+  const { gameQuestionsContext, themeContext } = useContext(GameContext)!;
 
   const [gameQuestions] = gameQuestionsContext;
+  const [isDark] = themeContext;
 
   const totalQuestions = gameQuestions.length;
   const totalQuestionsAnswered = gameQuestions.filter(
@@ -31,10 +32,14 @@ const QuestionContainer = ({
   const progressPercentage = (totalQuestionsAnswered / totalQuestions) * 100;
 
   return (
-    <div className="p-6 rounded shadow-lg flex flex-col gap-6">
+    <div
+      className={`${
+        isDark ? "bg-gray-600" : "bg-white"
+      } p-6 rounded shadow-lg flex flex-col gap-6 transition-all duraiton-400`}
+    >
       <div className="flex flex-col gap-1">
         <div className="flex justify-between items-center">
-          <div className="text-sm font-medium text-gray-700">
+          <div className="text-sm font-medium ">
             Question {currentQuestionCount} of {totalQuestions}
           </div>
           <div className="text-sm font-medium text-green-600">
@@ -56,7 +61,7 @@ const QuestionContainer = ({
         src={currentQuestion?.character?.image}
       />
 
-      <div className="grid gap-1 min-w-[300px]">
+      <div className="grid gap-2 min-w-[300px]">
         {currentQuestion.answers.map((answerMap: CharacterType) => (
           <MainAnswerButton
             key={answerMap.id}
@@ -68,6 +73,12 @@ const QuestionContainer = ({
                 ? currentQuestion.character.id === answerMap.id
                 : null
             }
+            // isFalse={
+
+            // }
+            // isInAnswerStatus={
+            //   answer == null?""
+            // }
           />
         ))}
       </div>

@@ -73,12 +73,6 @@ const QuestionContainer = ({
                 ? currentQuestion.character.id === answerMap.id
                 : null
             }
-            // isFalse={
-
-            // }
-            // isInAnswerStatus={
-            //   answer == null?""
-            // }
           />
         ))}
       </div>

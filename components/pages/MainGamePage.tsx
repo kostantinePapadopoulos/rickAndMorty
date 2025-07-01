@@ -53,7 +53,7 @@ const MainGamePage = () => {
         });
         return newAnswers;
       });
-    }, 5000);
+    }, 1500);
     return () => clearTimeout(timer);
   }, [answer]);
 
